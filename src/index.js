@@ -1,1 +1,1 @@
-export default "./components/dropdown";
+export { default as Dropdown } from "./components/dropdown";
