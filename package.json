@@ -1,9 +1,18 @@
 {
   "name": "@baptistej24/react-component",
   "author": "Baptiste JAN <contact@baptiste-jan.fr>",
-  "repository": "",
+  "repository": "https://github.com/BaptisteJ24/react-dropdown",
   "main": "src/index.js",
-  "keywords": [],
+  "keywords": [
+    "dropdown",
+    "react",
+    "component",
+    "select",
+    "menu",
+    "list",
+    "input",
+    "filter"
+  ],
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
