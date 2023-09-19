@@ -1,0 +1,142 @@
+.bj-react-dropdown,
+.bj-react-dropdown * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bj-react-dropdown {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+
+  &[aria-expanded="true"] {
+    .dropdown__selected {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+
+  .dropdown__selected {
+    position: relative;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 10px;
+
+    .dropdown__selected__text {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .arrow-close,
+    .arrow-open {
+      border: solid #ccc;
+      border-width: 0 2px 2px 0;
+      display: inline-block;
+      padding: 4px;
+      position: absolute;
+      right: 10px;
+      outline: none;
+
+      &.arrow-close {
+        top: 10px;
+        transform: rotate(45deg);
+      }
+
+      &.arrow-open {
+        top: 14px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  .dropdown__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    max-height: 200px;
+    background-color: white;
+    overflow-y: auto;
+    border: solid #ccc;
+    border-width: 0 1px 1px;
+    z-index: 5;
+    border-radius: 0 0 4px 4px;
+
+    .dropdown__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+      width: 100%;
+
+      &:not(:first-child) {
+        border-top: 1px solid #ccc;
+      }
+
+      &[data-selected="true"] {
+        background-color: #eee;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+}
+
+.bj-react-dropdown[data-theme="dark"] {
+  .dropdown__selected {
+    background-color: #333;
+    border-color: #666;
+    .dropdown__selected__text {
+      color: #fff;
+    }
+    .arrow-close,
+    .arrow-open {
+      border-color: #fff;
+    }
+  }
+
+  .dropdown__list {
+    background-color: #333;
+    border-color: #666;
+    .dropdown__item {
+      color: #fff;
+      &:not(:first-child) {
+        border-top: 1px solid #666;
+      }
+      &[data-selected="true"] {
+        background-color: #555;
+        &:hover {
+          background-color: #444;
+        }
+      }
+      &:hover {
+        background-color: #666;
+      }
+    }
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

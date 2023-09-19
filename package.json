@@ -2,8 +2,10 @@
   "name": "@baptistej24/react-component",
   "author": "Baptiste JAN <contact@baptiste-jan.fr>",
   "repository": "",
+  "main": "src/index.js",
   "keywords": [],
   "version": "1.0.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
