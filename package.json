@@ -1,7 +1,11 @@
 {
   "name": "@baptistej24/react-component",
   "author": "Baptiste JAN <contact@baptiste-jan.fr>",
-  "repository": "https://github.com/BaptisteJ24/react-dropdown",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BaptisteJ24/react-dropdown.git"
+  },
+  "homepage": "https://github.com/BaptisteJ24/react-dropdown",
   "main": "src/index.js",
   "keywords": [
     "dropdown",
