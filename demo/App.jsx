@@ -1,4 +1,4 @@
-import Dropdown from "../src/lib";
+import Dropdown from "../lib/dropdown";
 import "./style.css";
 
 function App() {

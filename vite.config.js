@@ -1,6 +1,7 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig({
   dedupe: ["react", "react-dom"],
@@ -11,14 +12,14 @@ export default defineConfig({
       name: "react-dropdown",
       fileName: (format) => `react-dropdown.${format}.js`,
     },
-  },
-  rollupOptions: {
-    external: ["react", "react-dom"],
-    output: {
-      globals: {
-        react: "React",
+    rollupOptions: {
+      external: ["react", "react-dom"],
+      output: {
+        globals: {
+          react: "React",
+        },
       },
     },
   },
-  plugins: [react()],
+  plugins: [react(), cssInjectedByJsPlugin()],
 });
