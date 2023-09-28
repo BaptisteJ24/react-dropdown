@@ -4,12 +4,10 @@
 
 ## Table of Contents
 
-- [@baptistej/react-dropdown](#baptistejreact-dropdown)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [API documentation](#api-documentation)
-  - [Examples](#examples)
-  - [Demo](#demo)
+- [Installation](#installation)
+- [API documentation](#api-documentation)
+- [Examples](#examples)
+- [Demo](#demo)
 
 ## Installation
 
