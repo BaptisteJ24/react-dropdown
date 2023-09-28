@@ -2,7 +2,17 @@ import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
 import "./dropdown.css";
 
-const Dropdown = ({ data, placeholder, theme, styles, onSelected }) => {
+/**
+ * description: Dropdown component
+ * @param {Array} data - Dropdown options
+ * @param {String} placeholder - Dropdown placeholder
+ * @param {String} theme - Dropdown theme
+ * @param {Object} styles - Dropdown styles
+ * @param {Function} onSelected - Callback function when an option is selected
+ * @param {Boolean} reset - Reset dropdown to placeholder
+ * @returns {JSX.Element} - Dropdown component
+ */
+const Dropdown = ({ data, placeholder, theme, styles, onSelected, reset }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selected, setSelected] = useState(null);
   const dropdownRef = useRef(null);
@@ -16,6 +26,10 @@ const Dropdown = ({ data, placeholder, theme, styles, onSelected }) => {
     setIsOpen(false);
     onSelected(item);
   };
+
+  useEffect(() => {
+    setSelected(null);
+  }, [reset]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -101,6 +115,8 @@ Dropdown.defaultProps = {
     dropdownList: {},
     dropdownItem: {},
   },
+  onSelected: () => {},
+  reset: false,
 };
 
 Dropdown.propTypes = {
@@ -116,6 +132,7 @@ Dropdown.propTypes = {
     dropdownItem: PropTypes.object,
   }),
   onSelected: PropTypes.func,
+  reset: PropTypes.bool,
 };
 
 export default Dropdown;

@@ -1,15 +1,28 @@
+import { useState } from "react";
 import Dropdown from "../lib/dropdown";
 import "./style.css";
 
 function App() {
+  const [resetDropdown, setResetDropdown] = useState(false);
+
+  const handleReset = () => {
+    setResetDropdown(!resetDropdown);
+  };
+
   return (
     <div className="demo">
       <h1>@baptistej24/react-dropdown</h1>
       <h2>Dropdown Component Demo</h2>
+      <button
+        onClick={handleReset}
+        style={{ padding: "5px", "margin-bottom": "10px" }}
+      >
+        Reset
+      </button>
       <ul className="demo__list">
         <li className="demo__list__item">
           <p>Default Dropdown :</p>
-          <Dropdown />
+          <Dropdown reset={resetDropdown} />
         </li>
         <li className="demo__list__item">
           <p>Custom placeholder Dropdown</p>
