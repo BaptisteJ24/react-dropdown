@@ -1,7 +1,6 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 
 export default defineConfig(({ mode }) => {
   if (mode === "lib") {
@@ -24,7 +23,7 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-      plugins: [react(), cssInjectedByJsPlugin()],
+      plugins: [react()],
     };
   }
 
@@ -36,5 +35,7 @@ export default defineConfig(({ mode }) => {
       plugins: [react()],
     };
   }
-  return {};
+  return {
+    plugins: [react()],
+  };
 });

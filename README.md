@@ -1,6 +1,6 @@
 # @baptistej/react-dropdown
 
-> A simple dropdown component for React
+> A simple, customizable and accessible React dropdown component
 
 ## Table of Contents
 
@@ -28,6 +28,7 @@ Here is a simple example of react-dropdown being used in an app with some custom
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Dropdown from "@baptistej/react-dropdown";
+import "@baptistej/react-dropdown/dist/style.css";
 
 function App() {
   const [reset, setReset] = useState(false);
@@ -39,9 +40,11 @@ function App() {
   return (
     <div>
       <Dropdown
+        id="dropdown-id"
         data={["Option 1", "Option 2", "Option 3"]}
         placeholder="Select an option"
         reset={reset}
+        enableDefaultClassName={true}
         theme="dark"
         styles={{
           dropdown: {

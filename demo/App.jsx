@@ -15,14 +15,18 @@ function App() {
       <h2>Dropdown Component Demo</h2>
       <button
         onClick={handleReset}
-        style={{ padding: "5px", "margin-bottom": "10px" }}
+        style={{ padding: "5px", marginBottom: "10px" }}
       >
         Reset
       </button>
       <ul className="demo__list">
         <li className="demo__list__item">
           <p>Default Dropdown :</p>
-          <Dropdown reset={resetDropdown} />
+          <Dropdown reset={resetDropdown} id="dropdown" />
+        </li>
+        <li className="demo__list__item">
+          <p>Default Dropdown :</p>
+          <Dropdown enableDefaultClassName={false} />
         </li>
         <li className="demo__list__item">
           <p>Custom placeholder Dropdown</p>
@@ -47,10 +51,10 @@ function App() {
                 backgroundColor: "green",
               },
               dropdownSelectedText: {
-                color: "orange",
+                color: "white",
               },
               dropdownArrow: {
-                border: "solid orange",
+                border: "solid white",
                 borderWidth: "0 3px 3px 0",
               },
               dropdownList: {
