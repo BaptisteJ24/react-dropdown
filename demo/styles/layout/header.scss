@@ -1,0 +1,13 @@
+.header {
+  &__title {
+    font-size: 3rem;
+  }
+  &__subtitle {
+    font-size: 2.25rem;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+}

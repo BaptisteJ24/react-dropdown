@@ -1,6 +1,10 @@
 import { useState } from "react";
 import Dropdown from "../lib/dropdown";
-import "./style.css";
+import Sidebar from "./components/sidebar";
+import "./styles/main.scss";
+import { Highlighter } from "rc-highlight";
+import Table from "./components/table";
+import Button from "./components/button";
 
 function App() {
   const [resetDropdown, setResetDropdown] = useState(false);
@@ -10,174 +14,155 @@ function App() {
   };
 
   return (
-    <div className="demo">
-      <h1>@baptistej24/react-dropdown</h1>
-      <h2>Dropdown Component Demo</h2>
-      <button
-        onClick={handleReset}
-        style={{ padding: "5px", marginBottom: "10px" }}
-      >
-        Reset
-      </button>
-      <ul className="demo__list">
-        <li className="demo__list__item">
-          <p>Default Dropdown :</p>
-          <Dropdown reset={resetDropdown} id="dropdown" />
-        </li>
-        <li className="demo__list__item">
-          <p>Default Dropdown :</p>
-          <Dropdown enableDefaultClassName={false} />
-        </li>
-        <li className="demo__list__item">
-          <p>Custom placeholder Dropdown</p>
-          <Dropdown placeholder={"Custom Placeholder"} />
-        </li>
-        <li className="demo__list__item">
-          <p>Custom data Dropdown</p>
-          <Dropdown data={["Value 1", "Value 2", "Value 3"]} />
-        </li>
-        <li className="demo__list__item">
-          <p>Dark Theme Dropdown :</p>
-          <Dropdown theme="dark" />
-        </li>
-        <li className="demo__list__item">
-          <p>Custom Style Dropdown (inline style)</p>
-          <Dropdown
-            styles={{
-              dropdown: {
-                width: "400px",
-              },
-              dropdownSelected: {
-                backgroundColor: "green",
-              },
-              dropdownSelectedText: {
-                color: "white",
-              },
-              dropdownArrow: {
-                border: "solid white",
-                borderWidth: "0 3px 3px 0",
-              },
-              dropdownList: {
-                backgroundColor: "green",
-              },
-              dropdownItem: {
-                color: "white",
-              },
-            }}
-          />
-        </li>
-      </ul>
-      <h2>Installation</h2>
-      <pre className="code-container">
-        <code className="code">
-          {`npm install @baptistej24/react-dropdown
-or 
-yarn add @baptistej24/react-dropdown
-         
+    <>
+      <Sidebar />
+      <div className="content">
+        <header className="header" id="introduction">
+          <div className="logo">
+            <img className="logo__img" src="/logo.jpg" alt="logo" />
+          </div>
+          <h1 className="header__title">@baptistej/react-dropdown</h1>
+          <h2 className="header__subtitle">React Dropdown Component Library</h2>
+          <p className="header__description">
+            A simple, customizable and accessible React dropdown component
+          </p>
+        </header>
+        <section>
+          <section id="installation" className="section">
+            <h2 className="section__title">Installation</h2>
+            <Highlighter className="language-javascript">
+              {`npm install --save "@baptistej/react-dropdown";`}
+            </Highlighter>
+            <p className="paragraph">or :</p>
+            <Highlighter className="language-javascript">
+              {`yarn add "@baptistej/react-dropdown";`}
+            </Highlighter>
+          </section>
 
-import Dropdown from "@baptistej24/react-dropdown";`}
-        </code>
-      </pre>
-      <h2>Props</h2>
-      <table className="table">
-        <thead className="table__header">
-          <tr className="table__header__row">
-            <th className="table__header__cell">Prop</th>
-            <th className="table__header__cell">Type</th>
-            <th className="table__header__cell">Default</th>
-            <th className="table__header__cell">Description</th>
-          </tr>
-        </thead>
-        <tbody className="table__body">
-          <tr className="table__body__row">
-            <td className="table__body__cell">data</td>
-            <td className="table__body__cell">array</td>
-            <td className="table__body__cell">
-              [&quot;Option 1&quot;, &quot;Option 2&quot;, &quot;Option 3&quot;]
-            </td>
-            <td className="table__body__cell">Array of options</td>
-          </tr>
-          <tr className="table__body__row">
-            <td className="table__body__cell">placeholder</td>
-            <td className="table__body__cell">string</td>
-            <td className="table__body__cell">
-              &quot;Select an option...&quot;
-            </td>
-            <td className="table__body__cell">Placeholder text</td>
-          </tr>
-          <tr className="table__body__row">
-            <td className="table__body__cell">theme</td>
-            <td className="table__body__cell">
-              string (&quot;light&quot; || &quot;dark&quot;)
-            </td>
-            <td className="table__body__cell">&quot;light&quot;</td>
-            <td className="table__body__cell">Theme of the dropdown</td>
-          </tr>
-          <tr className="table__body__row">
-            <td className="table__body__cell">styles</td>
-            <td className="table__body__cell">object</td>
-            <td className="table__body__cell">
-              <p>
-                {"{"}&nbsp;dropdown: {"{}"},
-              </p>
-              <p>&nbsp;&nbsp;dropdownSelected: {"{}"},</p>
-              <p>&nbsp;&nbsp;dropdownSelectedText: {"{}"},</p>
-              <p>&nbsp;&nbsp;dropdownArrow: {"{}"},</p>
-              <p>&nbsp;&nbsp;dropdownList: {"{}"},</p>
-              <p>&nbsp;&nbsp;dropdownItem: {"{} }"}</p>
-            </td>
-            <td className="table__body__cell">
-              Inline styles (refer to css styles)
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <section id="use" className="section">
+            <h2 className="section__title">Usage</h2>
+            <p className="paragraph">
+              Import the component and style and use it in your code :
+            </p>
+            <Highlighter className="language-javascript">
+              {`import Dropdown from "@baptistej/react-dropdown";
+import "@baptistej/react-dropdown/dist/style.css";
 
-      <h2>Usage</h2>
-      <pre className="code-container">
-        <code className="code">
-          {`import Dropdown from "@baptistej24/react-dropdown";
+const App = () => {
+  return (
+    <Dropdown />
+  );
+}
+                  
+export default App;`}
+            </Highlighter>
+          </section>
 
-// Basic Dropdown
-<Dropdown />
-
-// Custom placeholder Dropdown
-<Dropdown placeholder={"Custom Placeholder"} />
-
-// Custom data Dropdown
-<Dropdown data={["Value 1", "Value 2", "Value 3"]} />
-
-// Dark Theme Dropdown
-<Dropdown theme="dark" />
-
-// Custom Style Dropdown
-<Dropdown
+          <section id="dropdown" className="section">
+            <h2 className="section__title">Dropdown</h2>
+            <Highlighter className="language-javascript">
+              {`<Dropdown
+  id=""
+  data={[]}
+  placeholder=""
+  reset={}
+  enableDefaultClassName={}
+  theme=""
   styles={{
-    dropdown: {
-      width: "400px",
-    },
-    dropdownSelected: {
-      backgroundColor: "green",
-    },
-    dropdownSelectedText: {
-      color: "orange",
-    },
-    dropdownArrow: {
-      border: "solid orange",
-      borderWidth: "0 3px 3px 0",
-    },
-    dropdownList: {
-      backgroundColor: "green",
-    },
-    dropdownItem: {
-      color: "white",
-    },
+    dropdown: {},
+    dropdownSelected: {},
+    dropdownSelectedText: {},
+    dropdownArrow: {},
+    dropdownList: {},
+    dropdownItem: {},
   }}
+  onSelected={}
 />
-            `}
-        </code>
-      </pre>
-    </div>
+<button onClick={}>Reset</button>`}
+            </Highlighter>
+          </section>
+
+          <section id="props" className="section">
+            <h2 className="section__title">Props</h2>
+            <Table />
+          </section>
+
+          <section id="examples" className="section">
+            <h2 className="section__title">Examples</h2>
+            <ul className="dropdown__list">
+              <li className="dropdown__item">
+                <h3 id="basic-dropdown">Basic Dropdown</h3>
+                <div className="dropdown__content">
+                  <Dropdown reset={resetDropdown} id="dropdown" />
+                  <Button onClick={handleReset} text={"Reset"} />
+                </div>
+              </li>
+
+              <li className="dropdown__item">
+                <h3 id="customize-placeholder">Customize placeholder</h3>
+                <div className="dropdown__content">
+                  <Dropdown
+                    reset={resetDropdown}
+                    placeholder={"Custom Placeholder"}
+                  />
+                  <Button onClick={handleReset} text={"Reset"} />
+                </div>
+              </li>
+
+              <li className="dropdown__item">
+                <h3 id="customize-data">Customize data</h3>
+                <div className="dropdown__content">
+                  <Dropdown
+                    reset={resetDropdown}
+                    data={["Value 1", "Value 2", "Value 3"]}
+                  />
+                  <Button onClick={handleReset} text={"Reset"} />
+                </div>
+              </li>
+
+              <li className="dropdown__item">
+                <h3 id="dark-theme">Dark Theme</h3>
+                <div className="dropdown__content">
+                  <Dropdown reset={resetDropdown} theme="dark" />
+                  <Button onClick={handleReset} text={"Reset"} />
+                </div>
+              </li>
+
+              <li className="dropdown__item">
+                <h3 id="customize-style">Custom Style (inline style)</h3>
+                <div className="dropdown__content">
+                  <Dropdown
+                    reset={resetDropdown}
+                    styles={{
+                      dropdown: {
+                        width: "400px",
+                      },
+                      dropdownSelected: {
+                        backgroundColor: "green",
+                      },
+                      dropdownSelectedText: {
+                        color: "white",
+                      },
+                      dropdownArrow: {
+                        border: "solid white",
+                        borderWidth: "0 3px 3px 0",
+                      },
+                      dropdownList: {
+                        backgroundColor: "green",
+                      },
+                      dropdownItem: {
+                        color: "white",
+                      },
+                    }}
+                  />
+                  <Button onClick={handleReset} text={"Reset"} />
+                </div>
+              </li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </>
   );
 }
 

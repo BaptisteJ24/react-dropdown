@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useState, useEffect, useRef } from "react";
-import "./dropdown.css";
+import "./styles/main.scss";
 
 /**
  * description: Dropdown component
@@ -86,7 +86,9 @@ const Dropdown = ({
       id={id}
     >
       <div
-        {...(enableDefaultClassName ? { className: "dropdown__selected" } : {})}
+        {...(enableDefaultClassName
+          ? { className: "bj-dropdown__selected" }
+          : {})}
         aria-label="Dropdown selected"
         onClick={toggleDropdown}
         onKeyDown={handleKeyDown}
@@ -95,7 +97,7 @@ const Dropdown = ({
       >
         <span
           {...(enableDefaultClassName
-            ? { className: "dropdown__selected__text" }
+            ? { className: "bj-dropdown__selected__text" }
             : {})}
           style={styles.dropdownSelectedText}
         >
@@ -120,7 +122,7 @@ const Dropdown = ({
       <ul
         {...(enableDefaultClassName
           ? {
-              className: isOpen ? "dropdown__list" : "sr-only",
+              className: isOpen ? "bj-dropdown__list" : "sr-only",
             }
           : {})}
         role="listbox"
@@ -137,7 +139,9 @@ const Dropdown = ({
             tabIndex={isOpen ? "0" : "-1"}
             role="option"
             aria-label={item}
-            {...(enableDefaultClassName ? { className: "dropdown__item" } : {})}
+            {...(enableDefaultClassName
+              ? { className: "bj-dropdown__item" }
+              : {})}
             data-selected={selected === item}
             style={styles.dropdownItem}
           >

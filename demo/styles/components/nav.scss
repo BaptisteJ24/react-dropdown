@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 20px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &--padleft {
+      padding-left: 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    color: #3498db;
+
+    &:hover {
+      color: #ff9900;
+    }
+  }
+}
