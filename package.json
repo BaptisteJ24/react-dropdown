@@ -1,6 +1,6 @@
 {
   "name": "@baptistej/react-dropdown",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "A simple, customizable and accessible React dropdown component",
   "author": "Baptiste JAN <contact@baptiste-jan.fr>",
   "keywords": [
@@ -41,7 +41,7 @@
     "type": "git",
     "url": "git+https://github.com/BaptisteJ24/react-dropdown.git"
   },
-  "homepage": "https://github.com/BaptisteJ24/react-dropdown#readme",
+  "homepage": "https://baptistej-react-dropdown.netlify.app/",
   "bugs": {
     "url": "https://github.com/BaptisteJ24/react-dropdown/issues"
   },
