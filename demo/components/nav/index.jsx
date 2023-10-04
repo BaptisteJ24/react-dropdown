@@ -59,6 +59,11 @@ const Nav = () => {
             </li>
           </ul>
         </li>
+        <li className="nav__item">
+          <a className="nav__link" href="#contributors">
+            Contributors
+          </a>
+        </li>
       </ul>
     </nav>
   );

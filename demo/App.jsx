@@ -26,6 +26,36 @@ function App() {
           <p className="header__description">
             A simple, customizable and accessible React dropdown component
           </p>
+          <h2 className="section__title">Links</h2>
+          <ul className="header__link">
+            <li className="header__link__item">
+              <a
+                href="https://www.npmjs.com/package/@baptistej/react-dropdown"
+                rel="noreferrer"
+                target="_blank"
+              >
+                NPM Package
+              </a>
+            </li>
+            <li className="header__link__item">
+              <a
+                href="https://github.com/BaptisteJ24/react-dropdown"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Github Repository
+              </a>
+            </li>
+            <li className="header__link__item">
+              <a
+                href="https://codesandbox.io/s/baptistej-react-dropdown-dj4mty"
+                rel="noreferrer"
+                target="_blank"
+              >
+                CodeSandbox
+              </a>
+            </li>
+          </ul>
         </header>
         <section>
           <section id="installation" className="section">
@@ -159,6 +189,19 @@ export default App;`}
                 </div>
               </li>
             </ul>
+          </section>
+          <section id="contributors" className="section">
+            <h2>Contributors</h2>
+            <p>
+              Baptiste JAN -{" "}
+              <a
+                href="https://github.com/BaptisteJ24"
+                rel="noreferrer"
+                target="_blank"
+              >
+                https://github.com/BaptisteJ24
+              </a>{" "}
+            </p>
           </section>
         </section>
       </div>
